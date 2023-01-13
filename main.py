@@ -4,4 +4,5 @@ from functions import get_questions
 
 if __name__ == '__main__':
     # print(get_tricky_words())
-    print(get_questions("nada"))
+    for item in get_questions("race"):
+        print(item)
