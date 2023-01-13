@@ -1,5 +1,7 @@
+import uuid
 import requests
 from DataModels.QuestionDataModel import QuestionDataModel
+from DataModels.WordDataModel import WordDataModel
 
 # Endpoints
 __words = "https://api.sheety.co/821149c0243c0b587c7d697954e3210c/trickyWords/trickywords"
@@ -8,7 +10,19 @@ __questions = "https://api.sheety.co/821149c0243c0b587c7d697954e3210c/trickyWord
 # function to get the words information
 def get_tricky_words():
     response = requests.get(__words)
-    return response.json()["trickywords"]
+    new_list = []
+    for item in response.json()["trickywords"]:
+        new_item = WordDataModel(
+            str(uuid.uuid4().hex),
+            item["word"],
+            item["nBook"],
+            item["nlesson"],
+            item["difficulty"],
+            # get_questions(item["word"]),
+            item["type"]
+        )
+        new_list.append(new_item)
+    return new_list
 
 def get_questions(word):
     response = requests.get(__questions)

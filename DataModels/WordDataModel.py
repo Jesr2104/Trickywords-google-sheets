@@ -1,6 +1,6 @@
-from array import array
+# from array import array
 from dataclasses import dataclass
-from DataModels import QuestionDataModel
+from DataModels.QuestionDataModel import QuestionDataModel
 
 @dataclass
 class WordDataModel:
@@ -9,5 +9,5 @@ class WordDataModel:
     nBook: int
     nLesson: int
     difficulty: int
-    questions: array[QuestionDataModel]
+    # questions: array[QuestionDataModel]
     type: int
