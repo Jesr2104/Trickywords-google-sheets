@@ -18,7 +18,7 @@ def get_tricky_words():
             item["nBook"],
             item["nlesson"],
             item["difficulty"],
-            # get_questions(item["word"]),
+            get_questions(item["word"]),
             item["type"]
         )
         new_list.append(new_item)
@@ -26,6 +26,7 @@ def get_tricky_words():
 
 def get_questions(word):
     response = requests.get(__questions)
+    print(response)
     new_list = []
 
     for item in response.json()["questions"]:

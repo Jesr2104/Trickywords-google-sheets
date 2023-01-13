@@ -1,6 +1,7 @@
 # Trickywords google sheets APIs
 from functions import get_tricky_words
+from functions import get_questions
 
 if __name__ == '__main__':
-    for item in get_tricky_words():
-        print(item)
+    # get_tricky_words()
+    get_questions("race")

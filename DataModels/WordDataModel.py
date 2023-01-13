@@ -1,4 +1,3 @@
-# from array import array
 from dataclasses import dataclass
 from DataModels.QuestionDataModel import QuestionDataModel
 
@@ -9,5 +8,5 @@ class WordDataModel:
     nBook: int
     nLesson: int
     difficulty: int
-    # questions: array[QuestionDataModel]
+    questions: list[QuestionDataModel]
     type: int
