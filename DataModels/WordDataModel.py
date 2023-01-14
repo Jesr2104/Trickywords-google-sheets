@@ -1,4 +1,5 @@
-from dataclasses import dataclass
+from json import dumps
+from dataclasses import dataclass, asdict
 from DataModels.QuestionDataModel import QuestionDataModel
 
 @dataclass
@@ -10,3 +11,11 @@ class WordDataModel:
     difficulty: int
     questions: list[QuestionDataModel]
     type: int
+
+    @property
+    def __dict__(self):
+        return asdict(self)
+
+    @property
+    def json(self):
+        return dumps(self.__dict__)

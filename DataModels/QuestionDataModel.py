@@ -1,4 +1,5 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, asdict
+from json import dumps
 
 @dataclass
 class QuestionDataModel:
@@ -7,3 +8,11 @@ class QuestionDataModel:
     optionA: str
     optionB: str
     optionC: str
+
+    @property
+    def __dict__(self):
+        return asdict(self)
+
+    @property
+    def json(self):
+        return dumps(self.__dict__)
