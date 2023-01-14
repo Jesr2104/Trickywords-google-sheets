@@ -9,14 +9,19 @@ __doc_validation = "AKfycbzSCON_JWG93S2kcrBk5f808pClMaYvUHhAx_TOE9wGeuk1de9ufkVM
 __baseURL = "https://script.google.com/macros/s/"
 __restURL = "/exec"
 
+
 def get_words():
     tricky_words = get_tricky_words_dict()
     save_as_json(tricky_words)
+
+    print("Number of items: ", len(tricky_words))
     print(tricky_words)
+
 
 def save_as_json(tricky_words):
     with open('tricky_words.json', 'w') as f:
         json.dump(tricky_words, f)
+
 
 # function to get the words information with dict
 def get_tricky_words_dict():
@@ -38,6 +43,7 @@ def get_tricky_words_dict():
         if len(new_item["questions"]) > 0:
             new_list_words.append(new_item)
     return new_list_words
+
 
 # function to ge the list of the questions with dict
 def get_questions_dict(word, response_questions):
