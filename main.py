@@ -1,5 +1,5 @@
 # Trickywords google sheets APIs
-from functions import get_words_json
+from functions import get_words
 
 if __name__ == '__main__':
-    get_words_json()
+    get_words()
