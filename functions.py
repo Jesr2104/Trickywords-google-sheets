@@ -32,10 +32,10 @@ def get_tricky_words_dict():
     for item in response_words.json():
         new_item = {
             "idTrickyWord": str(uuid.uuid4().hex),
-            "word": item['word'],
+            "trickyWord": item['word'],
             "nBook": item['nBook'],
             "nLesson": item['nLesson'],
-            "difficult": item['difficult'],
+            "difficulty": item['difficult'],
             "questions": get_questions_dict(item['word'], response_questions),
             "type": item['type']
         }
