@@ -35,9 +35,9 @@ def get_tricky_words_dict():
             "trickyWord": item['word'],
             "nBook": item['nBook'],
             "nLesson": item['nLesson'],
-            "difficulty": item['difficult'],
+            "difficulty": get_difficulty(item['difficult']),
             "questions": get_questions_dict(item['word'], response_questions),
-            "type": item['type']
+            "type": get_type(item['type'])
         }
 
         if len(new_item["questions"]) > 0:
@@ -60,3 +60,28 @@ def get_questions_dict(word, response_questions):
             }
             new_list_questions.append(new_item)
     return new_list_questions
+
+def get_difficulty(difficulty_string):
+    if difficulty_string.lower() == "easy".lower():
+        return 1
+    elif difficulty_string.lower() == "medium".lower():
+        return 2
+    elif difficulty_string.lower() == "hard".lower():
+        return 3
+    else:
+        # without selection
+        return 0
+
+def get_type(type_string):
+    if type_string.lower() == "Verbs".lower():
+        return 1
+    elif type_string.lower() == "Adjectives".lower():
+        return 2
+    elif type_string.lower() == "Nouns".lower():
+        return 3
+    elif type_string.lower() == "Phrasal verb".lower():
+        return 4
+    elif type_string.lower() == "Expression".lower():
+        return 5
+    else:
+        return 0
