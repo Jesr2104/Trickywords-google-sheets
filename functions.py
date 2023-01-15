@@ -17,11 +17,9 @@ def get_words():
     print("Number of items: ", len(tricky_words))
     print(tricky_words)
 
-
 def save_as_json(tricky_words):
     with open('tricky_words.json', 'w') as f:
         json.dump(tricky_words, f)
-
 
 # function to get the words information with dict
 def get_tricky_words_dict():
@@ -43,7 +41,6 @@ def get_tricky_words_dict():
         if len(new_item["questions"]) > 0:
             new_list_words.append(new_item)
     return new_list_words
-
 
 # function to ge the list of the questions with dict
 def get_questions_dict(word, response_questions):
