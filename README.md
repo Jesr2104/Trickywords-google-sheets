@@ -1,6 +1,6 @@
 # Google Sheets Project
 
-This project utilizes a Google Sheets document as a quick and efficient way to collect APIs and organize data. The data is separated by past book entries and formatted into JSON using Python, making it easy to insert into a database. This project also utilizes the real-time Firebase database to store the data.
+This project utilizes a Google Sheets document as a quick and efficient way to collect APIs and sort data. The data is separated by past book entries and formatted into JSON using Python, making it easy to insert into a database. This project also utilizes the real-time Firebase database to store the data.
 
 **To set up this project, the following steps should be taken:**
 
@@ -51,4 +51,4 @@ class QuestionDataModel:
 
 ## What the project returns:
 
-When executing the project, it returns a Json with all the list of objects that it extracts from Google Sheet and finishes completing its information in the python program.
+When executing the project, it returns a Json with all the list of objects that it extracts from Google Sheet and finishes completing its information in the Python program.
